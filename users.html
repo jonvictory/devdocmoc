@@ -104,25 +104,25 @@
     </div>
   </div>
   <script>
-  //   function setApiKey(){
+    function setApiKey(){
         
-  //       const rapiAsEle = document.getElementById('rapi-doc');
-  //       const keyInputAsEle = document.getElementById('key-input');
+        const rapiAsEle = document.getElementById('rapi-doc');
+        const keyInputAsEle = document.getElementById('key-input');
         
-  //       rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
+        rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
   
-  //       console.log(rapiAsEle.getAttribute('api-key-value'))
-  //     }
+        console.log(rapiAsEle.getAttribute('api-key-value'))
+      }
   
-  //     function setApiServer(){
+      function setApiServer(){
           
-  //         const rapiAsEle = document.getElementById('rapi-doc');
-  //         const serverInputAsEle = document.getElementById('server-input');
+          const rapiAsEle = document.getElementById('rapi-doc');
+          const serverInputAsEle = document.getElementById('server-input');
           
-  //         rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
     
-  //         console.log(rapiAsEle.getAttribute('server-url'))
-  //       }
+          console.log(rapiAsEle.getAttribute('server-url'))
+        }
   
   //     const setCookie = () => {
   //       const rapiAsEle = document.getElementById('rapi-doc');
@@ -136,7 +136,8 @@
   //   console.log(rapiAsEle.getAttribute('server-url'))
   //   console.log(document.cookie);
   // }
-
+  const cvalue = "key="+rapiAsEle.getAttribute('api-key-value')+";server="+rapiAsEle.getAttribute('server-url')
+  
   function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
