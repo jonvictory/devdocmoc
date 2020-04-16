@@ -126,8 +126,7 @@
   
       const setCookie = () => {
         const rapiAsEle = document.getElementById('rapi-doc');
-    document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+"; expires=Thu, Dec 2020 12:00:00 UTC"; 
-    document.cookie = "server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
+    document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+";server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
       
     console.log(document.cookie);
       }
@@ -137,6 +136,7 @@
     console.log(rapiAsEle.getAttribute('server-url'))
     console.log(document.cookie);
   }
+  
   </script>
     <script src="./res/js/js.js">
     
