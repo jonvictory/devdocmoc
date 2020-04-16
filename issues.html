@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="title">Issues</title>
+    <link rel="stylesheet" type="text/css" href="./res/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 charecters -->
+  <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+  </head>
+  <header>
+    <!-- Navbar -->
+    <div class="container" id="cont-nav"></div>
+  </header>
+  <body>
+     <!--title-->
+     <div class="container-fluid">
+        <div class="container head-tain">
+            <h1 id="cur-page-title"></h1>
+          </div>
+    <!-- Sidebar -->
+    <div class="row">
+        <div class="col-2 menu-nav-align">
+            <ul id="side-menu" class="nav flex-column menu-nav-space menu-nav-cont"></ul>
+        </div>
+        <!-- Unique Page Content -->
+        <div class="main-tain col-8">
+          <p>
+            You can use the Issues API to interact with issues using the Workfront API.
+          </p>
+          <p>
+            <b>NOTE:</b> Issues are represented as the OptTask object in the
+            Workfront API.
+          </p>
+          <p>
+            The following are some examples of common ways to interact with Issue objects and endpoints
+            using the Workfront API:
+          </p>
+          <ul>
+            <li>Create a new Request (not issues).</li>
+            <li>Convert a Request into a project</li>
+            <li>
+              Get issue data from Workfront to use with a third-party
+              application. This can include parameterValues or custom dataIssue
+              data.
+            </li>
+            <li>
+              Get issue status information. For example, get the Planned
+              Completion Date in order to track the work done for requests with
+              an overdue deadline.
+            </li>
+            <li>
+              Create custom routing rules to route assignments and Requests to
+              the appropriate team or person.
+            </li>
+          </ul>
+          <div class="box">
+          <rapi-doc 
+          spec-url="https://cdn.devdocs-dev.workfront-dev.com/res/swagger/swagger040620/attask-OPTASK040620.json" 
+          show-header = 'true'
+          show-info = 'false'
+          allow-authentication ='false'
+          allow-server-selection = 'false'
+          allow-api-list-style-selection ='false'
+          theme = 'light' 
+          layout = 'row'
+          >
+          <img class="ui-logo" slot="logo" src = "https://cdn.devdocs-dev.workfront-dev.com/res/img/workfront-orange.svg"/>
+ </rapi-doc>
+      </div>
+        </div>
+      </div>
+    </div>
+    <script src="./res/js/js.js"></script>
+  </body>
+  <footer>
+      <div class="container-fluid foot-pad">
+          <div class="row">
+            <div class= "col-md">
+              <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/why-workfront">Why Workfront</a></h4>
+              
+            </div>
+            <div class= "col-md">
+                <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/solutions">Solutions</a></h4>
+            </div>
+            <div class= "col-md">
+                <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/products">Products</a></h4>
+                
+            </div>
+            <div class= "col-md">
+                <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/resources">All Resources</a></h4>
+              <ul class="foot-list">
+                </div>
+            <div class= "col-md">
+                <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/services-and-support">Support</a></h4>
+              </div>
+            <div class= "col-md">
+                <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/about-us">About</a></h4>
+              </div>
+          </div>
+        </div>
+  </footer>
+</html>

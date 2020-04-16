@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="title">Tasks</title>
+    <link rel="stylesheet" type="text/css" href="./res/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 charecters -->
+  <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js">
+  function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+  </script>
+  </head>
+  <header>
+    <!-- Navbar -->
+    <div class="container" id="cont-nav"></div>
+  </header>
+  <body onload="checkCookie()">
+     <!--title-->
+     <div class="container-fluid">
+        <div class="container head-tain">
+            <h1 id="cur-page-title"></h1>
+          </div>
+    <!-- Sidebar -->
+    <div class="row">
+        <div class="col-2 menu-nav-align">
+            <ul id="side-menu" class="nav flex-column menu-nav-space menu-nav-cont"></ul>
+        </div>
+        <!-- Unique Page Content -->
+        <div class="main-tain col-8">
+          <p>
+              You can use the Tasks API to interact with tasks within Workfront.
+              
+          </p>
+          <p>Following are some examples of the most common ways of interacting with tasks through the API:</p>
+          <ul>
+              <li>Get task data from Workfront to use with a third-party application. This can include parameterValues or custom data.</li>
+              <li>Update existing information regarding the task, including custom data and custom forms.</li>
+              <li>Evaluate user availability by checking current task assignments and hours.
+              <li>Check the status of approvals.</li>
+              <li>Track hours worked for billing purposes.</li>
+          </ul>
+          <div class="box">
+              <div class="col-md">
+                  <button class='btn btn-primary butt' onclick='checkCookie()' >Submit</button >
+                  </div>
+          <rapi-doc 
+          spec-url="https://cdn.devdocs-dev.workfront-dev.com/res/swagger/swagger040620/attask-TASK040620.json"
+          show-header = 'true'
+          show-info = 'false'
+          allow-authentication ='false'
+          allow-server-selection = 'false'
+          allow-api-list-style-selection ='false'
+          theme = 'light' 
+          layout = 'row'
+          >
+          <img class="ui-logo" slot="logo" src = "https://cdn.devdocs-dev.workfront-dev.com/res/img/workfront-orange.svg"/></rapi-doc>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="./res/js/js.js">
+    
+    </script>
+  </body>
+  <footer> 
+    <div class="container-fluid foot-pad">
+      <div class="row">
+        <div class= "col-md">
+          <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/why-workfront">Why Workfront</a></h4>
+          
+        </div>
+        <div class= "col-md">
+            <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/solutions">Solutions</a></h4>
+        </div>
+        <div class= "col-md">
+            <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/products">Products</a></h4>
+            
+        </div>
+        <div class= "col-md">
+            <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/resources">All Resources</a></h4>
+          <ul class="foot-list">
+            </div>
+        <div class= "col-md">
+            <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/services-and-support">Support</a></h4>
+          </div>
+        <div class= "col-md">
+            <h4 class="foot-head"><a target="_blank" href="https://www.workfront.com/about-us">About</a></h4>
+          </div>
+      </div>
+    </div>
+  </footer>
+</html>
