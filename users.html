@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="col-md">
-          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie' >Submit</button >
+          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie()' >Submit</button >
           </div>
 
           <div class="col-md">
@@ -106,11 +106,12 @@
     <script src="./res/js/js.js">
     
      
-    console.log(x)
-      const onLoad = () => {
-        document.cookie = "username=Steven Hofheins; expires=Thu, Dec 2020 12:00:00 UTC;path=/";
-      var x = document.cookie
-      }
+    // console.log(x)
+    //   const onLoad = () => {
+    //     document.cookie = "username=Steven Hofheins; expires=Thu, Dec 2020 12:00:00 UTC;path=/";
+    //   var x = document.cookie
+    //   }
+    
       function setApiKey(){
         
       const rapiAsEle = document.getElementById('rapi-doc');
@@ -120,6 +121,7 @@
 
       console.log(rapiAsEle.getAttribute('api-key-value'))
     }
+
     function setApiServer(){
         
         const rapiAsEle = document.getElementById('rapi-doc');
@@ -131,9 +133,9 @@
       }
 
     const setCookie = () => {
-      // const rapiAsEle = document.getElementById('rapi-doc');
-  // document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+"; expires=Thu, Dec 2020 12:00:00 UTC"; 
-  // document.cookie = "server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
+      const rapiAsEle = document.getElementById('rapi-doc');
+  document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+"; expires=Thu, Dec 2020 12:00:00 UTC"; 
+  document.cookie = "server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
     
   console.log(document.cookie);
     }
