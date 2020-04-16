@@ -103,6 +103,35 @@
       </div>
     </div>
   </div>
+  <script>
+    function setApiKey(){
+        
+        const rapiAsEle = document.getElementById('rapi-doc');
+        const keyInputAsEle = document.getElementById('key-input');
+        
+        rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
+  
+        console.log(rapiAsEle.getAttribute('api-key-value'))
+      }
+  
+      function setApiServer(){
+          
+          const rapiAsEle = document.getElementById('rapi-doc');
+          const serverInputAsEle = document.getElementById('server-input');
+          
+          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+    
+          console.log(rapiAsEle.getAttribute('server-url'))
+        }
+  
+      const setCookie = () => {
+        const rapiAsEle = document.getElementById('rapi-doc');
+    document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+"; expires=Thu, Dec 2020 12:00:00 UTC"; 
+    document.cookie = "server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
+      
+    console.log(document.cookie);
+      }
+  </script>
     <script src="./res/js/js.js">
     
      
@@ -112,33 +141,7 @@
     //   var x = document.cookie
     //   }
 
-      function setApiKey(){
-        
-      const rapiAsEle = document.getElementById('rapi-doc');
-      const keyInputAsEle = document.getElementById('key-input');
-      
-      rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
-
-      console.log(rapiAsEle.getAttribute('api-key-value'))
-    }
-
-    function setApiServer(){
-        
-        const rapiAsEle = document.getElementById('rapi-doc');
-        const serverInputAsEle = document.getElementById('server-input');
-        
-        rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-  
-        console.log(rapiAsEle.getAttribute('server-url'))
-      }
-
-    const setCookie = () => {
-      const rapiAsEle = document.getElementById('rapi-doc');
-  document.cookie = "key="+rapiAsEle.getAttribute('api-key-value')+"; expires=Thu, Dec 2020 12:00:00 UTC"; 
-  document.cookie = "server="+rapiAsEle.getAttribute('server-url')+"; expires=Thu, Dec 2020 12:00:00 UTC";
     
-  console.log(document.cookie);
-    }
     </script>
     
   </body>
