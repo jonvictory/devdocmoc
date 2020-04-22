@@ -129,7 +129,7 @@
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires="+d.toUTCString();
         const rapiAsEle = document.getElementById('rapi-doc');
-        document.cookie = cname + "=" + cvalue + "; key="+rapiAsEle.getAttribute('api-key-value')+"; server="+rapiAsEle.getAttribute('server-url')+"; "+expires+"; path=/";
+        document.cookie = cname + "=" + cvalue + ";key=" + rapiAsEle.getAttribute('api-key-value') + ";server=" + rapiAsEle.getAttribute('server-url') + ";" + expires + "; path=/";
       
     console.log(document.cookie);
       }
