@@ -88,11 +88,11 @@
           </div>
         </div>
         <div class="col-md">
-          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie("username", customApiKey, customServerURL, 7);' >Submit</button >
+          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie("username", customServerID, customApiKey, customServerURL, 7);' >Submit</button >
           </div>
 
           <div class="col-md">
-              <button class='btn btn-primary butt' onclick='cookiePuke()' >RELOAD</button >
+              <button class='btn btn-primary butt' onclick='checkCookie(), cookiePuke()' >RELOAD</button >
               </div>
           
         </div>
@@ -113,26 +113,22 @@
     let serverInputAsEle;
 
     const setApiKey = () => {
-        
-        
-        keyInputAsEle = document.getElementById('key-input');
+         keyInputAsEle = document.getElementById('key-input');
         
         rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
 
-        var customApiKey = keyInputAsEle.value
+        customApiKey = keyInputAsEle.value
 
         console.log(rapiAsEle.getAttribute('api-key-value'))
         console.log(customApiKey)
       }
   
     const setApiServer = () => {
-          
-          // const rapiAsEle = document.getElementById('rapi-doc');
-          const serverInputAsEle = document.getElementById('server-input');
+          serverInputAsEle = document.getElementById('server-input');
           
           customServerURL = rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
     
-          var customServerID = serverInputAsEle.value
+          customServerID = serverInputAsEle.value
 
           
           console.log(rapiAsEle.getAttribute('server-url'))
@@ -140,11 +136,11 @@
         }
   
         const setCookie = (cname, cvalue, ckey, cserver, exdays) => {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        // const rapiAsEle = document.getElementById('rapi-doc');
-        document.cookie = cname + "=" + cvalue + ";key=" + ckey + ";server=" + cserver + ";" + expires + "; path=/";
+
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          var expires = "expires="+d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";key=" + ckey + ";server=" + cserver + ";" + expires + "; path=/";
       
     console.log(document.cookie);
       }
