@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="col-md">
-          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie("username", customServerID, customApiKey, customServerURL, 7);' >Submit</button >
+          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),timeOut();' >Submit</button >
           </div>
 
           <div class="col-md">
@@ -134,7 +134,10 @@
           console.log(rapiAsEle.getAttribute('server-url'))
           console.log(customServerID)
         }
-  
+        function timeOut() {
+          setTimeout(function(){setCookie("username", customServerID, customApiKey, customServerURL, 7);}, 2000)
+          };
+          
         const setCookie = (cname, cvalue, ckey, cserver, exdays) => {
 
           var d = new Date();
