@@ -137,13 +137,13 @@
         function timeOut() {
           setTimeout(function(){setCookie("username", customServerID, customApiKey, customServerURL, 7);}, 2000)
           };
-          
+
         const setCookie = (cname, cvalue, ckey, cserver, exdays) => {
 
           var d = new Date();
           d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
           var expires = "expires="+d.toUTCString();
-          document.cookie = cname + "=" + cvalue + "; key=" + ckey + "; server=" + cserver + "; " + expires + "; path=/";
+          document.cookie = cname + "=" + cvalue + "; key=" + ckey + "; server=" + rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com') + "; " + expires + "; path=/";
       
     console.log(document.cookie);
       }
