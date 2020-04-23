@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="col-md">
-          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie();' >Submit</button >
+          <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);' >Submit</button >
           </div>
 
           <div class="col-md">
@@ -134,28 +134,25 @@
           console.log(rapiAsEle.getAttribute('server-url'))
           console.log(customServerID)
         }
-    //     function timeOut() {
-    //       setTimeout(function(){setCookie("username", customServerID, customApiKey, customServerURL, 7);}, 2000)
-    //       };
+  
+        const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
 
-    //     const setCookie = (cname, cvalue, ckey, cserver, exdays) => {
-
-    //       var d = new Date();
-    //       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    //       var expires = "expires="+d.toUTCString();
-    //       document.cookie = cname + "=" + cvalue + "; key=" + ckey + "; server=" + rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com') + "; " + expires + "; path=/";
-      
-    // console.log(document.cookie);
-    //   }
-    const setCookie = (cname, cvalue, exdays) => {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        // const rapiAsEle = document.getElementById('rapi-doc');
-        document.cookie = cname + "=" + cvalue + ";key=" + rapiAsEle.getAttribute('api-key-value') + ";server=" + rapiAsEle.getAttribute('server-url') + ";" + expires + "; path=/";
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          var expires = "expires="+d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + aname + "=" + avalue + ";" + sname + "=" + svalue + ";" + expires + "; path=/";
       
     console.log(document.cookie);
       }
+    // const setCookie = (cname, cvalue, exdays) => {
+    //     var d = new Date();
+    //     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    //     var expires = "expires="+d.toUTCString();
+    //     // const rapiAsEle = document.getElementById('rapi-doc');
+    //     document.cookie = cname + "=" + cvalue + ";key=" + rapiAsEle.getAttribute('api-key-value') + ";server=" + rapiAsEle.getAttribute('server-url') + ";" + expires + "; path=/";
+      
+    // console.log(document.cookie);
+    //   }
 
   const checkCookie = () => {
     var user = getCookie("username");
@@ -164,7 +161,7 @@
     } else {
       user = prompt("Please enter your name:", "");
       if (user != "" && user != null) {
-        setCookie("username", user, 7);
+        setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
       }
     }
   } 
