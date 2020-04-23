@@ -149,20 +149,15 @@
           document.cookie = "path=/"
     console.log(document.cookie);
       }
-    // const setCookie = (cname, cvalue, exdays) => {
-    //     var d = new Date();
-    //     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    //     var expires = "expires="+d.toUTCString();
-    //     // const rapiAsEle = document.getElementById('rapi-doc');
-    //     document.cookie = cname + "=" + cvalue + ";key=" + rapiAsEle.getAttribute('api-key-value') + ";server=" + rapiAsEle.getAttribute('server-url') + ";" + expires + "; path=/";
-      
-    // console.log(document.cookie);
-    //   }
-
+  
   const checkCookie = () => {
     var user = getCookie("username");
     if (user != "") {
       alert("Welcome again " + user);
+      var keykey = getCookie("key")
+      var serser = getCookie("server")
+      console.log(keykey)
+      console.log(serser)
     } else {
       user = prompt("Please enter your name:", "");
       if (user != "" && user != null) {
