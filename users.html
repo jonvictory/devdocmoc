@@ -126,9 +126,11 @@
     const setApiServer = () => {
           serverInputAsEle = document.getElementById('server-input');
           
-          customServerURL = rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
     
           customServerID = serverInputAsEle.value
+
+          customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
 
           
           console.log(rapiAsEle.getAttribute('server-url'))
@@ -143,7 +145,8 @@
           document.cookie = cname + "=" + cvalue;
           document.cookie = aname + "=" + avalue;
           document.cookie = sname + "=" + svalue;
-          document.cookie = expires + "; path=/";
+          document.cookie = expires;
+          document.cookie = "path=/"
     console.log(document.cookie);
       }
     // const setCookie = (cname, cvalue, exdays) => {
