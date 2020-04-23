@@ -152,12 +152,14 @@
   
   const checkCookie = () => {
     var user = getCookie("username");
+    var keykey = getCookie("key")
+    var serser = getCookie("server")
     if (user != "") {
-      alert("Welcome again " + user);
-      var keykey = getCookie("key")
-      var serser = getCookie("server")
+      
       console.log(keykey)
       console.log(serser)
+      alert("Welcome again " + user);
+      
     } else {
       user = prompt("Please enter your name:", "");
       if (user != "" && user != null) {
