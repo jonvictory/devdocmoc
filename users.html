@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <div class="container" id="cont-nav"></div>
   </header>
-  <body onload="checkCookie()">
+  <body onload="cookiePuke(), checkCookie()">
     <!--title-->
     <div class="container-fluid">
       <div class="container head-tain">
@@ -108,10 +108,11 @@
     var customApiKey;
     var customServerID;
 
+    const rapiAsEle = document.getElementById('rapi-doc'); 
 
     const setApiKey = () => {
         
-        const rapiAsEle = document.getElementById('rapi-doc');
+        
         const keyInputAsEle = document.getElementById('key-input');
         
         rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
@@ -124,7 +125,7 @@
   
     const setApiServer = () => {
           
-          const rapiAsEle = document.getElementById('rapi-doc');
+          // const rapiAsEle = document.getElementById('rapi-doc');
           const serverInputAsEle = document.getElementById('server-input');
           
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
@@ -140,7 +141,7 @@
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires="+d.toUTCString();
-        const rapiAsEle = document.getElementById('rapi-doc');
+        // const rapiAsEle = document.getElementById('rapi-doc');
         document.cookie = cname + "=" + cvalue + ";key=" + rapiAsEle.getAttribute('api-key-value') + ";server=" + rapiAsEle.getAttribute('server-url') + ";" + expires + "; path=/";
       
     console.log(document.cookie);
@@ -173,7 +174,7 @@
   return "";
 }
   const cookiePuke = () => {
-    const rapiAsEle = document.getElementById('rapi-doc');
+    // const rapiAsEle = document.getElementById('rapi-doc');
     console.log(rapiAsEle.getAttribute('api-key-value'))
     console.log(rapiAsEle.getAttribute('server-url'))
     console.log(document.cookie);
