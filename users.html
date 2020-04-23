@@ -104,14 +104,22 @@
     </div>
   </div>
   <script>
+
+    var customApiKey;
+    var customServerID;
+
+
     const setApiKey = () => {
         
         const rapiAsEle = document.getElementById('rapi-doc');
         const keyInputAsEle = document.getElementById('key-input');
         
         rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
-  
+
+        var customApiKey = document.getElementById('key-input')
+
         console.log(rapiAsEle.getAttribute('api-key-value'))
+        console.log(customApiKey)
       }
   
     const setApiServer = () => {
@@ -121,7 +129,11 @@
           
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
     
+          var customServerID = documnet.getElementById('server-input')
+
+          
           console.log(rapiAsEle.getAttribute('server-url'))
+          console.log(customServerID)
         }
   
     const setCookie = (cname, cvalue, exdays) => {
