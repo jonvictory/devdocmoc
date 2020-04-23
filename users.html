@@ -116,7 +116,7 @@
         
         rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
 
-        var customApiKey = document.getElementById('key-input')
+        var customApiKey = keyInputAsEle.value
 
         console.log(rapiAsEle.getAttribute('api-key-value'))
         console.log(customApiKey)
@@ -129,7 +129,7 @@
           
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
     
-          var customServerID = documnet.getElementById('server-input')
+          var customServerID = serverInputAsEle.value
 
           
           console.log(rapiAsEle.getAttribute('server-url'))
