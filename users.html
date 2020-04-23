@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <div class="container" id="cont-nav"></div>
   </header>
-  <body onload="cookiePuke(), checkCookie()">
+  <body onload="checkCookie()">
     <!--title-->
     <div class="container-fluid">
       <div class="container head-tain">
@@ -92,7 +92,7 @@
           </div>
 
           <div class="col-md">
-              <button class='btn btn-primary butt' onclick='checkCookie(), cookiePuke()' >RELOAD</button >
+              <button class='btn btn-primary butt' onclick='checkCookie()' >RELOAD</button >
               </div>
           
         </div>
@@ -119,8 +119,8 @@
 
         customApiKey = keyInputAsEle.value
 
-        console.log(rapiAsEle.getAttribute('api-key-value'))
-        console.log(customApiKey)
+        // console.log(rapiAsEle.getAttribute('api-key-value'))
+        // console.log(customApiKey)
       }
   
     const setApiServer = () => {
@@ -131,10 +131,8 @@
           customServerID = serverInputAsEle.value
 
           customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
-
-          
-          console.log(rapiAsEle.getAttribute('server-url'))
-          console.log(customServerID)
+          // console.log(rapiAsEle.getAttribute('server-url'))
+          // console.log(customServerID)
         }
   
         const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
@@ -147,7 +145,7 @@
           document.cookie = sname + "=" + svalue;
           document.cookie = expires;
           document.cookie = "path=/"
-    console.log(document.cookie);
+    // console.log(document.cookie);
       }
   
   const checkCookie = () => {
@@ -157,12 +155,12 @@
     if (user != "") {
       rapiAsEle.setAttribute('server-url', serser);
       rapiAsEle.setAttribute('api-key-value', keykey);
-      console.log(keykey);
-      console.log(serser);
-      console.log(rapiAsEle.getAttribute('api-key-value'));
-      console.log(rapiAsEle.getAttribute('server-url'));
+      // console.log(keykey);
+      // console.log(serser);
+      // console.log(rapiAsEle.getAttribute('api-key-value'));
+      // console.log(rapiAsEle.getAttribute('server-url'));
 
-      alert("Welcome again " + user);
+      // alert("Welcome again " + user);
       
     } else {
       user = prompt("Please enter your name:", "");
@@ -186,12 +184,12 @@
     }
   return "";
 }
-  const cookiePuke = () => {
-    // const rapiAsEle = document.getElementById('rapi-doc');
-    console.log(rapiAsEle.getAttribute('api-key-value'))
-    console.log(rapiAsEle.getAttribute('server-url'))
-    console.log(document.cookie);
-  }
+  // const cookiePuke = () => {
+  //   const rapiAsEle = document.getElementById('rapi-doc');
+  //   console.log(rapiAsEle.getAttribute('api-key-value'))
+  //   console.log(rapiAsEle.getAttribute('server-url'))
+  //   console.log(document.cookie);
+  // }
 
   </script>
     <script src="./res/js/js.js"></script>
