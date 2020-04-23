@@ -155,9 +155,13 @@
     var keykey = getCookie("key")
     var serser = getCookie("server")
     if (user != "") {
-      
-      console.log(keykey)
-      console.log(serser)
+      rapiAsEle.setAttribute('server-url', serser);
+      rapiAsEle.setAttribute('api-key-value', keykey);
+      console.log(keykey);
+      console.log(serser);
+      console.log(rapiAsEle.getAttribute('api-key-value'));
+      console.log(rapiAsEle.getAttribute('server-url'));
+
       alert("Welcome again " + user);
       
     } else {
