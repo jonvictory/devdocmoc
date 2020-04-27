@@ -1,5 +1,7 @@
 window.onload = function() {
   
+  checkCookie();
+
   // const documentationNav
 
   const htmlNav =
