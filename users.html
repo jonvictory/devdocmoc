@@ -67,8 +67,10 @@
         allow-server-selection = 'false'
         allow-api-list-style-selection ='false'
         api-key-value = ''
-        api-key-location = 'query'
+        api-key-name = ''
+        api-key-location = 'query,header'
         server-url = ''
+        default-api-server = ''
         
         default-api-server = ''
         theme = 'light' 
@@ -128,6 +130,8 @@
           serverInputAsEle = document.getElementById('server-input');
           
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
     
           customServerID = serverInputAsEle.value
 
