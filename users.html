@@ -108,50 +108,50 @@
   </div>
   <script>
 
-    // const rapiAsEle = document.getElementById('rapi-doc');
-    // let customApiKey;
-    // let customServerID;
-    // let customServerURL;
-    // let keyInputAsEle; 
-    // let serverInputAsEle;
+    const rapiAsEle = document.getElementById('rapi-doc');
+    let customApiKey;
+    let customServerID;
+    let customServerURL;
+    let keyInputAsEle; 
+    let serverInputAsEle;
 
-    // const setApiKey = () => {
-    //      keyInputAsEle = document.getElementById('key-input');
+    const setApiKey = () => {
+         keyInputAsEle = document.getElementById('key-input');
         
-    //     rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
+        rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
 
-    //     customApiKey = keyInputAsEle.value
+        customApiKey = keyInputAsEle.value
 
-    //     console.log(rapiAsEle.getAttribute('api-key-value'))
-    //    console.log(customApiKey)
-    //   }
+        // console.log(rapiAsEle.getAttribute('api-key-value'))
+        // console.log(customApiKey)
+      }
   
-    // const setApiServer = () => {
-    //       serverInputAsEle = document.getElementById('server-input');
+    const setApiServer = () => {
+          serverInputAsEle = document.getElementById('server-input');
           
-    //       rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-    //       rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-    //       rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
+          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
     
-    //       customServerID = serverInputAsEle.value
+          customServerID = serverInputAsEle.value
 
-    //       customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
-    //       console.log(rapiAsEle.getAttribute('server-url'))
-    //       console.log(customServerID)
-    //     }
+          customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
+          // console.log(rapiAsEle.getAttribute('server-url'))
+          // console.log(customServerID)
+        }
   
-    //     const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
+        const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
 
-    //       var d = new Date();
-    //       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    //       var expires = "expires="+d.toUTCString();
-    //       document.cookie = cname + "=" + cvalue;
-    //       document.cookie = aname + "=" + avalue;
-    //       document.cookie = sname + "=" + svalue;
-    //       document.cookie = expires;
-    //       document.cookie = "path=/"
-    //  console.log(document.cookie);
-    //   }
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          var expires = "expires="+d.toUTCString();
+          document.cookie = cname + "=" + cvalue;
+          document.cookie = aname + "=" + avalue;
+          document.cookie = sname + "=" + svalue;
+          document.cookie = expires;
+          document.cookie = "path=/"
+    // console.log(document.cookie);
+      }
   
   // const checkCookie = () => {
   //   var user = getCookie("username");

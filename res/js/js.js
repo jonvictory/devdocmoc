@@ -245,87 +245,42 @@ let currentPageDecision = function() {
   }
 }
 currentPageDecision()
-    const rapiAsEle = document.getElementById('rapi-doc');
-    let customApiKey;
-    let customServerID;
-    let customServerURL;
-    let keyInputAsEle; 
-    let serverInputAsEle;
+   const checkCookie = () => {
+    var user = getCookie("username");
+    var keykey = getCookie("key")
+    var serser = getCookie("server")
+    if (user != "") {
+      rapiAsEle.setAttribute('server-url', serser);
+      rapiAsEle.setAttribute('api-key-value', keykey);
+      console.log(keykey);
+      console.log(serser);
+      console.log(rapiAsEle.getAttribute('api-key-value'));
+      console.log(rapiAsEle.getAttribute('server-url'));
 
-    const setApiKey = () => {
-         keyInputAsEle = document.getElementById('key-input');
-        
-        rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
-
-        customApiKey = keyInputAsEle.value
-
-        console.log(rapiAsEle.getAttribute('api-key-value'))
-       console.log(customApiKey)
+      // alert("Welcome again " + user);
+      
+    } else {
+      user = prompt("Please enter your name:", "");
+      if (user != "" && user != null) {
+        setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
       }
-  
-    const setApiServer = () => {
-          serverInputAsEle = document.getElementById('server-input');
-          
-          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-          rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-          rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
-    
-          customServerID = serverInputAsEle.value
+    }
+  } 
 
-          customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
-          console.log(rapiAsEle.getAttribute('server-url'))
-          console.log(customServerID)
-        }
-  
-        const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
-
-          var d = new Date();
-          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-          var expires = "expires="+d.toUTCString();
-          document.cookie = cname + "=" + cvalue;
-          document.cookie = aname + "=" + avalue;
-          document.cookie = sname + "=" + svalue;
-          document.cookie = expires;
-          document.cookie = "path=/"
-     console.log(document.cookie);
+  const getCookie = (cname) => {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
       }
-
-const checkCookie = () => {
-  var user = getCookie("username");
-  var keykey = getCookie("key")
-  var serser = getCookie("server")
-  if (user != "") {
-    rapiAsEle.setAttribute('server-url', serser);
-    rapiAsEle.setAttribute('api-key-value', keykey);
-    console.log(keykey);
-    console.log(serser);
-    console.log(rapiAsEle.getAttribute('api-key-value'));
-    console.log(rapiAsEle.getAttribute('server-url'));
-
-    // alert("Welcome again " + user);
-    
-  } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
     }
-  }
-} 
-
-const getCookie = (cname) => {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-return ""; 
-}
+  return "";
+  } 
 //END CURRENT DOCUEMNTATION PAGE FUNCTIONS//
 
 //CURRENT ADMIN PAGE FUNCTIONS//
