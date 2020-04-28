@@ -68,7 +68,7 @@
         allow-api-list-style-selection ='false'
         api-key-value = ''
         api-key-name = ''
-        api-key-location = 'query,header'
+        api-key-location = 'header'
         server-url = ''
         default-api-server = ''
         
@@ -119,7 +119,7 @@
          keyInputAsEle = document.getElementById('key-input');
         
         rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
-
+        rapiAsEle.setAttribute('api-key-name', keyInputAsEle.value);
         customApiKey = keyInputAsEle.value
 
         // console.log(rapiAsEle.getAttribute('api-key-value'))
@@ -131,7 +131,7 @@
           
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
           rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
-          rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
+          
     
           customServerID = serverInputAsEle.value
 
