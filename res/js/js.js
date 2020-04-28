@@ -1,6 +1,6 @@
 window.onload = function() {
   //cookie check functions
-  
+
   const checkCookie = () => {
     var user = getCookie("username");
     var keykey = getCookie("key")
@@ -8,6 +8,7 @@ window.onload = function() {
     if (user != "") {
       rapiAsEle.setAttribute('server-url', serser);
       rapiAsEle.setAttribute('api-key-value', keykey);
+      rapiAsEle.setAttribute('api-key-name', keykey)
       console.log(keykey);
       console.log(serser);
       console.log(rapiAsEle.getAttribute('api-key-value'));
