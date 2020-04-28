@@ -1,5 +1,5 @@
 window.onload = function() {
-  
+
   checkCookie();
 
   // const documentationNav
@@ -76,7 +76,7 @@ window.onload = function() {
     "</ul>" +
     "</div>" +
     "</nav>";
-    console.log(document.getElementsByTagName("title")[0].id)
+    // console.log(document.getElementsByTagName("title")[0].id)
 menuDecision();
 
     function menuDecision() {
@@ -245,7 +245,42 @@ let currentPageDecision = function() {
   }
 }
 currentPageDecision()
-  
+
+const checkCookie = () => {
+  var user = getCookie("username");
+  var keykey = getCookie("key")
+  var serser = getCookie("server")
+  if (user != "") {
+    rapiAsEle.setAttribute('server-url', serser);
+    rapiAsEle.setAttribute('api-key-value', keykey);
+    console.log(keykey);
+    console.log(serser);
+    console.log(rapiAsEle.getAttribute('api-key-value'));
+    console.log(rapiAsEle.getAttribute('server-url'));
+
+    // alert("Welcome again " + user);
+    
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
+    }
+  }
+} 
+
+const getCookie = (cname) => {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+return ""; 
 //END CURRENT DOCUEMNTATION PAGE FUNCTIONS//
 
 //CURRENT ADMIN PAGE FUNCTIONS//
