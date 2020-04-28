@@ -245,6 +245,50 @@ let currentPageDecision = function() {
   }
 }
 currentPageDecision()
+    const rapiAsEle = document.getElementById('rapi-doc');
+    let customApiKey;
+    let customServerID;
+    let customServerURL;
+    let keyInputAsEle; 
+    let serverInputAsEle;
+
+    const setApiKey = () => {
+         keyInputAsEle = document.getElementById('key-input');
+        
+        rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
+
+        customApiKey = keyInputAsEle.value
+
+        console.log(rapiAsEle.getAttribute('api-key-value'))
+       console.log(customApiKey)
+      }
+  
+    const setApiServer = () => {
+          serverInputAsEle = document.getElementById('server-input');
+          
+          rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+          rapiAsEle.setAttribute('api-key-name', serverInputAsEle.value);
+    
+          customServerID = serverInputAsEle.value
+
+          customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
+          console.log(rapiAsEle.getAttribute('server-url'))
+          console.log(customServerID)
+        }
+  
+        const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
+
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          var expires = "expires="+d.toUTCString();
+          document.cookie = cname + "=" + cvalue;
+          document.cookie = aname + "=" + avalue;
+          document.cookie = sname + "=" + svalue;
+          document.cookie = expires;
+          document.cookie = "path=/"
+     console.log(document.cookie);
+      }
 
 const checkCookie = () => {
   var user = getCookie("username");
@@ -281,6 +325,7 @@ const getCookie = (cname) => {
     }
   }
 return ""; 
+}
 //END CURRENT DOCUEMNTATION PAGE FUNCTIONS//
 
 //CURRENT ADMIN PAGE FUNCTIONS//
