@@ -7,12 +7,7 @@
       "email": "support@workfront.com"
     }
   },
-  "servers": [
-    {
-      "url": "",
-      "description": "My Workfront API v10.0 Server"
-    }
-  ],
+
   "components": {
     "securitySchemes": {
       "apiKeyHeader": {
