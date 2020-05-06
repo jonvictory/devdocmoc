@@ -16,12 +16,7 @@ window.onload = function() {
 
       // alert("Welcome again " + user);
       
-    } else {
-      user = prompt("Please enter your name:", "");
-      if (user != "" && user != null) {
-        setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
-      }
-    }
+    } 
   } 
 
   const getCookie = (cname) => {

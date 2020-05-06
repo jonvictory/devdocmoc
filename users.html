@@ -123,7 +123,6 @@
   
     const setApiServer = () => {
           serverInputAsEle = document.getElementById('server-input');
-          
           rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
           rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
           
@@ -147,49 +146,6 @@
           document.cookie = "path=/"
     // console.log(document.cookie);
       }
-  
-  // const checkCookie = () => {
-  //   var user = getCookie("username");
-  //   var keykey = getCookie("key")
-  //   var serser = getCookie("server")
-  //   if (user != "") {
-  //     rapiAsEle.setAttribute('server-url', serser);
-  //     rapiAsEle.setAttribute('api-key-value', keykey);
-  //     console.log(keykey);
-  //     console.log(serser);
-  //     console.log(rapiAsEle.getAttribute('api-key-value'));
-  //     console.log(rapiAsEle.getAttribute('server-url'));
-
-  //     // alert("Welcome again " + user);
-      
-  //   } else {
-  //     user = prompt("Please enter your name:", "");
-  //     if (user != "" && user != null) {
-  //       setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);
-  //     }
-  //   }
-  // } 
-
-  // const getCookie = (cname) => {
-  //   var name = cname + "=";
-  //   var ca = document.cookie.split(';');
-  //   for(var i = 0; i < ca.length; i++) {
-  //     var c = ca[i];
-  //     while (c.charAt(0) == ' ') {
-  //       c = c.substring(1);
-  //     }
-  //     if (c.indexOf(name) == 0) {
-  //       return c.substring(name.length, c.length);
-  //     }
-  //   }
-  // return "";
-// }
-  // const cookiePuke = () => {
-  //   const rapiAsEle = document.getElementById('rapi-doc');
-  //   console.log(rapiAsEle.getAttribute('api-key-value'))
-  //   console.log(rapiAsEle.getAttribute('server-url'))
-  //   console.log(document.cookie);
-  // }
 
   </script>
     <script src="./res/js/js.js"></script>
