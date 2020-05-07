@@ -53,21 +53,96 @@
             <li>Attach a new template to the Project.</li>
             <li>Get Comments from a project's Update Stream.</li>
           </ul>
-          <rapi-doc 
-          spec-url="https://cdn.devdocs-dev.workfront-dev.com/res/swagger/swagger040620/attask-PROJ040620.json"
-          show-header = 'true'
-          show-info = 'false'
-          allow-authentication ='false'
-          allow-server-selection = 'false'
-          allow-api-list-style-selection ='false'
-          theme = 'light' 
-          layout = 'row'
-          >
-          <img class="ui-logo" slot="logo" src = "https://cdn.devdocs-dev.workfront-dev.com/res/img/workfront-orange.svg"/>
-        </rapi-doc>
+
+          <div class='box'>
+        
+              <rapi-doc id="rapi-doc"
+              api-key-value = ''
+              api-key-name = ''
+              api-key-location = 'header'
+              server-url = ''
+              default-api-server = ''
+              spec-url="https://jonvictory.github.io/devdocmoc/res/swagger/swagger040620/attask-PROJ040620.json" 
+              show-header = 'true'
+              show-info = 'true'
+              allow-authentication ='false'
+              allow-server-selection = 'false'
+              allow-try = 'true'
+              allow-spec-url-load = 'false'
+              allow-api-list-style-selection ='false'
+              theme = 'light' 
+              layout = 'row'
+              >
+              <img class="ui-logo" slot="logo" src = "https://cdn.devdocs-dev.workfront-dev.com/res/img/workfront-orange.svg"/>
+              <div class="container cont-input">
+                <div class="row">
+                  <div class="col-md">
+                  <input id='key-input' type='text' >
+                  <lable style="padding-left: 20px" for="key-input">Api Key</lable>
+                  <div class="row">
+                      <input id='server-input' type='text'>
+                      <lable style="padding-left: 20px" for="server-input">Company Name</lable>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-md">
+                <button class='btn btn-primary butt' onclick='setApiKey(),setApiServer(),setCookie("username", customServerID, "key", customApiKey, "server", customServerURL, 7);' >Submit</button >
+                </div>
+      
+              </div>
+            </rapi-doc>
+            </div>
         </div>
       </div>
     </div>
+    <script>
+
+        const rapiAsEle = document.getElementById('rapi-doc');
+        let customApiKey;
+        let customServerID;
+        let customServerURL;
+        let keyInputAsEle; 
+        let serverInputAsEle;
+    
+        const setApiKey = () => {
+             keyInputAsEle = document.getElementById('key-input');
+            
+            rapiAsEle.setAttribute('api-key-value', keyInputAsEle.value);
+            rapiAsEle.setAttribute('api-key-name', keyInputAsEle.value);
+            customApiKey = keyInputAsEle.value
+    
+            // console.log(rapiAsEle.getAttribute('api-key-value'))
+            // console.log(customApiKey)
+          }
+      
+        const setApiServer = () => {
+              serverInputAsEle = document.getElementById('server-input');
+              rapiAsEle.setAttribute('server-url', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+              rapiAsEle.setAttribute('default-api-server', 'https://'+serverInputAsEle.value+'.my.workfront.com');
+              
+        
+              customServerID = serverInputAsEle.value
+    
+              customServerURL = 'https://'+serverInputAsEle.value+'.my.workfront.com'
+              // console.log(rapiAsEle.getAttribute('server-url'))
+              // console.log(customServerID)
+            }
+      
+            const setCookie = (cname, cvalue, aname, avalue, sname, svalue, exdays) => {
+    
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+              var expires = "expires="+d.toUTCString();
+              document.cookie = cname + "=" + cvalue;
+              document.cookie = aname + "=" + avalue;
+              document.cookie = sname + "=" + svalue;
+              document.cookie = expires;
+              document.cookie = "path=/"
+        // console.log(document.cookie);
+          }
+    
+      </script>
     <script src="./res/js/js.js"></script>
   </body>
   <footer>
