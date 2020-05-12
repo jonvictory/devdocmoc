@@ -5,7 +5,7 @@ window.onload = function() {
     var user = getCookie("username");
     var keykey = getCookie("key")
     var serser = getCookie("server")
-    if (document.getElementsByTagName("title")[0].id === 'admin-title'|| document.getElementsByTagName("title")[0].attr === 'home') {
+    if (document.getElementsByTagName("title")[0].id === 'admin-title'|| document.getElementsByTagName("title")[0].id === 'home') {
       return;
     }
 
